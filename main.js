@@ -2,7 +2,7 @@
 // Author: MrAlpha786 (github.con/MrAlpha786)
 
 // Username
-document.getElementById("username").innerHTML = userName;
+//document.getElementById("username").innerHTML = userName;
 
 // Searchbar
 const searchEngines = {
@@ -21,7 +21,7 @@ if (!Object.keys(searchEngines).includes(searchEngine)) {
 
 var searchUrl = searchEngines[searchEngine];
 
-searchField.placeholder = "Search " + searchEngine + "...";
+searchField.placeholder = "Keresés " + searchEngine + "...";
 
 // Check searchbar for keystrokes
 searchField.addEventListener("keyup", function(event) {
@@ -60,12 +60,14 @@ function search() {
 
 // Show Scrollbar on scrolling
 window.addEventListener('scroll', function showScrollbar(e) {
-    if (e.target.classList.contains("visible-scrollbar") === false) {
-        e.target.classList.add("visible-scrollbar");
-
-        // Hide Scrollbar after 1.5s
-        setTimeout(hideScrollbar, 1500, e);
-    }
+	//console.log(e.target);
+	if(e.target!='#document'){
+		if (e.target.classList.contains("visible-scrollbar") === false) {
+			e.target.classList.add("visible-scrollbar");
+			// Hide Scrollbar after 1.5s
+			setTimeout(hideScrollbar, 1500, e);
+		}
+	}
 }, true);
 
 // Hide Scrollbar
@@ -91,41 +93,36 @@ function toggleMode() {
     }
 }
 
-//Bookmark Table
-var tabs = document.querySelectorAll('.tab');
-var contents = document.querySelectorAll('.content');
+//tabok és tartalom
+var tabs     = document.getElementById('tab-container');
+var contents = document.getElementById('content-container');
 
-for (let i=0; i<tabs.length; i++){
-
-    tabs[i].innerHTML = cards[i].name;
-
-    var sites = Object.keys(cards[i].bookmarks);
-    //Populate content with bookmarks
-    for (let j=0; j<sites.length; j++){
-
+for (let i=0; i<cards.length; i++)
+{
+	//tabok
+	if(i==0) tabs.innerHTML+='<div class="tab active" data-tab="tab-'+i+'">'+cards[i].name+'</div>';
+	else tabs.innerHTML+='<div class="tab" data-tab="tab-'+i+'">'+cards[i].name+'</div>';
+	var tab = document.querySelectorAll('.tab');
+	
+	//content
+	if(i==0) contents.innerHTML+='<div class="content active" data-tab="tab-'+i+'"></div>';
+	else contents.innerHTML+='<div class="content" data-tab="tab-'+i+'"></div>';
+	var sites = Object.keys(cards[i].bookmarks);
+	var content = document.querySelectorAll('.content');
+	for (let j=0; j<sites.length; j++){
         var a_link = document.createElement('a');
         a_link.innerHTML = sites[j];
-        a_link.href = cards[i].bookmarks[sites[j]];
-
-        contents[i].appendChild(a_link);
+        a_link.href = 'https://'+cards[i].bookmarks[sites[j]];
+        content[i].appendChild(a_link);
     }
-
-    // Make tab active on mouse click
-    tabs[i].addEventListener('mouseenter', function(){
-        for (let j=0; j<tabs.length; j++){
-            tabs[j].classList.remove('active');
+	tab[i].addEventListener('mouseenter', function(){
+        for (let j=0; j<tab.length; j++){
+            tab[j].classList.remove('active');
         }
-        tabs[i].classList.add('active');
-
-        for (let j=0; j<contents.length; j++){
-            contents[j].classList.remove('active');
+        tab[i].classList.add('active');
+        for (let j=0; j<content.length; j++){
+            content[j].classList.remove('active');
         }
-        contents[i].classList.add('active');
+        content[i].classList.add('active');
     })
 }
-
-
-
-
-
-

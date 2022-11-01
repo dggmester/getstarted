@@ -3,48 +3,65 @@ var userName = "Faizan";
 
 // Default Searchengine
 // Available: Google DuckDuckGo Bing Yahoo
-var searchEngine = "Yahoo";
+var searchEngine = "Google";
 
 // Cards
 var cards = [
 	{
-		name: "General",
+		name: "Alap",
 		bookmarks: {
-			"google": "aaa",
-			"dirive": "aaa",
-			"maps": "aaa",
-			"photos": "aaa",
-			"mega": "aaa"
+			"Google"    : "google.com",
+			"Gmail"     : "gmail.com",
+			"Twitter"   : "twitter.com",
+			"imgur"     : "imgur.com",
+			"Rádió"     : "myonlineradio.hu/radio-1",
+			"Youtube"   : "youtube.com",
+			"Facebook"  : "facebook.com",
+			"Massenger" : "massenger.com",
+			"Reddit"    : "reddit.com",
+		}
+	},
+	{
+		name: "Hírek",
+		bookmarks: {
+			"Index"          : "index.hu",
+			"Hír24"          : "24.hu",
+			"444"            : "444.hu",
+			"Magyar Közlöny" : "magyarkozlony.hu",
+			"MO.hu"          : "mo.hu",
+			"Ügyfélkapu"     : "ugyfelkapu.gov.hu",
 		}
 	},
 	{
 		name: "Tech",
 		bookmarks: {
-			"github": "aaa",
-			"freenode": "aaa",
-			"stackoverflow": "aaa",
-			"github": "aaa",
-			"freenode": "aaa"
+			"DGG fileserver"   : "dggmester.hu/fs",
+			"Youtube letöltő"  : "en.savefrom.net",
+			"Twitch letöltő"   : "untwitch.com",
+			"Github"           : "github.com",
+			"Stackoverflow"    : "stackoverflow.com",
+			"Reddit"           : "reddit.com",
+			"Ninite"           : "ninite.com",
+			"uBlock"           : "ublockorigin.com/",
+			"adGuard"          : "adguard.com",
 		}
 	},
 	{
-		name: "Work",
+		name: "Neonity Tech",
 		bookmarks: {
-			"subreddit": "aaa",
-			"youtube": "aaa",
-			"spotify": "aaa",
-			"amazon": "aaa",
-			"dummysite": "aaa"
-		}
-	},
-	{
-		name: "Social",
-		bookmarks: {
-			"youtube": "https://www.youtube.com",
-			"twitter": "https://twitter.com",
-			"imgur": "https://imgur.com/",
-			"facebook": "https://www.facebook.com",
-			"reddit": "https://www.reddit.com"
+			"photopea": "photopea.com",
+			"10minutemail": "10minutemail.com",
+			"alternativeto": "alternativeto.net",
+			"lestenhace": "lestenhace.io",
+			"remove.bg": "remove.bg",
+			"tinywow": "tinywow.com",
+			"cutout": "cutout.pro",
+			"cymath": "cymath.com",
+			"vscode": "vscode.dev",
+			"helyesiras": "helyesiras.mta.hu",
+			"eatthismuch": "eatthismuch.com",
+			"pcpartpicker": "pcpartpicker.com",
+			"bequiet - psucalculator": "www.bequiet.com/en/psucalculator",
 		}
 	}
 ]

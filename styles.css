@@ -13,6 +13,7 @@
   --invert: 0;
 
   --scrollbar: #8888;
+  --magenta: #ff00ff;
   --red: #cc241d;
   --green: #98971a;
   --yellow: #d79921;
@@ -201,6 +202,11 @@ button#clear-field img {
 }
 
 /* Colors */
+.tab.active[data-tab*="0"],
+.content[data-tab*="0"] a:hover {
+	background-color: var(--magenta);
+}
+
 .tab.active[data-tab*="1"],
 .content[data-tab*="1"] a:hover {
 	background-color: var(--red);
@@ -232,9 +238,13 @@ button#clear-field img {
 		width: 24%;
 		margin: 0 1%;
 		padding:0.5em;
-		font-size: 1.5em;
+		font-size: 1.1em;
 		background-color: var(--secondaryBg);
 		border-radius: 0.75rem 0.75rem 0 0;
+	}
+	
+	.tab[data-tab*="0"] {
+		color: var(--magenta);
 	}
 
 	.tab[data-tab*="1"] {
