@@ -102,7 +102,6 @@ for (let i=0; i<cards.length; i++)
 	//tabok
 	if(i==0) tabs.innerHTML+='<div class="tab active" data-tab="tab-'+i+'">'+cards[i].name+'</div>';
 	else tabs.innerHTML+='<div class="tab" data-tab="tab-'+i+'">'+cards[i].name+'</div>';
-	var tab = document.querySelectorAll('.tab');
 	
 	//content
 	if(i==0) contents.innerHTML+='<div class="content active" data-tab="tab-'+i+'"></div>';
@@ -115,14 +114,22 @@ for (let i=0; i<cards.length; i++)
         a_link.href = 'https://'+cards[i].bookmarks[sites[j]];
         content[i].appendChild(a_link);
     }
-	tab[i].addEventListener('mouseenter', function(){
-        for (let j=0; j<tab.length; j++){
-            tab[j].classList.remove('active');
-        }
-        tab[i].classList.add('active');
-        for (let j=0; j<content.length; j++){
-            content[j].classList.remove('active');
-        }
-        content[i].classList.add('active');
-    })
+	
+	if(i==cards.length-1){
+		//EVENTEK TAB CLICK
+		var tab = document.querySelectorAll('.tab');
+		for (let i=0; i<cards.length; i++){
+			tab[i].addEventListener('mouseenter', function(){
+				for (let j=0; j<tab.length; j++){
+					tab[j].classList.remove('active');
+				}
+				tab[i].classList.add('active');
+				for (let j=0; j<content.length; j++){
+					content[j].classList.remove('active');
+				}
+				content[i].classList.add('active');
+			})
+		}
+	}
 }
+
